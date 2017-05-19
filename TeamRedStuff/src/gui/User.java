@@ -5,7 +5,7 @@ package gui;
  */
 /**
  * 
- * @version 1.5
+ * @version 1.6 
  */
 public class User {
 
@@ -15,19 +15,20 @@ public class User {
 	
 	private String myLastName;
 	
+	private String myPassword;
+	
 	//User Constructor
-	public User (final String theFirstName, final String theLastName,
-			final String theEmail) {
+	public User(final String theFirstName, final String theLastName,
+			final String theEmail, final String thePassword) {
 		if(theFirstName == null || theLastName ==  null
-				|| theEmail == null) {
+				|| theEmail == null || thePassword == null) {
 			throw new IllegalArgumentException("Illegal Parameters!");
 		}
-		//another comment to test pull requests 
-		//the needs of the many, outweigh the needs of the few -Spock
 		
 		myFirstName = theFirstName;
 		myLastName = theLastName;
 		myEmail = theEmail;
+		myPassword = thePassword;
 	}
 	
 	public String getFirstName(){
@@ -42,23 +43,7 @@ public class User {
 		return myEmail;
 	}
 	
-	public void setFirstName(final String newFirstName) {
-		if (theEmail != null) {
-			myFirstName = newFirstName;
-		}
-	
-		
-	}
-	
-	public void setLastName(final String newLastName) {
-		if (theLastName != null) {
-			myLastName = newLastName;
-		}
-	}
-	
-	public void setEmail(final String newEmail) {
-		if (theEmail != null) {
-		myEmail = newEmail;
-		}
+	public String getPassword(){
+		return myPassword;
 	}
 }
